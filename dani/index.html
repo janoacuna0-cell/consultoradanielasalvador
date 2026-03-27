@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniela Salvador | Ingeniería de la Hospitalidad & Alto Rendimiento</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-green: #0a110a;
+            --beige: #f9f9f4;
+            --gold: #b38e44;
+            --soft-gold: #d4b475;
+            --white: #ffffff;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--white);
+            color: #1a1a1a;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, .serif {
+            font-family: 'Playfair Display', serif;
+            letter-spacing: -0.01em;
+        }
+        .bg-dark-green { background-color: var(--dark-green); }
+        .text-gold { color: var(--gold); }
+        .bg-gold { background-color: var(--gold); }
+        
+        p { font-size: 1.1rem; line-height: 1.75; }
+        
+        .section-padding { padding-top: 100px; padding-bottom: 100px; }
+        @media (max-width: 768px) {
+            .section-padding { padding-top: 60px; padding-bottom: 60px; }
+        }
+
+        .hero-gradient {
+            background: linear-gradient(rgba(10, 17, 10, 0.85), rgba(10, 17, 10, 0.75)), url('https://images.unsplash.com/photo-1544124499-58912cbddaad?auto=format&fit=crop&q=80&w=1920');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .premium-card {
+            background: var(--white);
+            border: 1px solid rgba(179, 142, 68, 0.15);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .premium-card:hover {
+            transform: translateY(-12px);
+            border-color: var(--gold);
+            box-shadow: 0 40px 80px -15px rgba(0,0,0,0.1);
+        }
+
+        .solution-tag {
+            background: rgba(179, 142, 68, 0.1);
+            color: var(--gold);
+            padding: 4px 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .whatsapp-modern {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            background: #25d366;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 100px;
+            box-shadow: 0 20px 40px rgba(37, 211, 102, 0.3);
+            transition: all 0.4s ease;
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+        }
+        .whatsapp-modern:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(37, 211, 102, 0.4);
+            background: #20ba5a;
+        }
+        .pulse { animation: pulse-animation 2s infinite; }
+        @keyframes pulse-animation {
+            0% { box-shadow: 0 0 0 0px rgba(37, 211, 102, 0.6); }
+            100% { box-shadow: 0 0 0 25px rgba(37, 211, 102, 0); }
+        }
+
+        .input-premium {
+            background: transparent;
+            border-bottom: 2px solid #e5e7eb;
+            padding: 1.25rem 0.5rem;
+            width: 100%;
+            transition: all 0.4s ease;
+            font-size: 1rem;
+        }
+        .input-premium:focus {
+            border-bottom-color: var(--gold);
+            outline: none;
+        }
+
+        .hero-btn {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .hero-btn:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navegación: Fondo transparente con desenfoque y letras ajustadas -->
+    <nav class="fixed w-full z-[100] bg-dark-green/80 text-white py-5 px-8 border-b border-gold/20 backdrop-blur-lg">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex flex-col">
+                <span class="text-2xl font-bold tracking-tighter uppercase serif text-gold leading-none">Salvador</span>
+                <span class="text-[9px] uppercase tracking-[0.5em] text-gold mt-1 font-bold">Estrategia & Hospitalidad</span>
+            </div>
+            <div class="hidden lg:flex gap-10 text-[10px] font-bold uppercase tracking-[0.25em]">
+                <a href="#inicio" class="hover:text-gold transition-colors">Inicio</a>
+                <a href="#ingenieria" class="hover:text-gold transition-colors">Ingeniería de Soluciones</a>
+                <a href="#proceso" class="hover:text-gold transition-colors">Metodología</a>
+                <a href="#contacto" class="hover:text-gold transition-colors">Contacto</a>
+            </div>
+            <a href="#contacto" class="bg-gold text-white px-7 py-3 text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-dark-green transition-all transform hover:scale-105 active:scale-95">
+                Agendar consulta
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="inicio" class="hero-gradient min-h-screen flex items-center text-white relative py-20">
+        <div class="max-w-6xl mx-auto px-6 text-center lg:text-left">
+            <div class="space-y-12 reveal">
+                <div class="inline-flex items-center gap-3 px-5 py-2 bg-gold/10 border border-gold/30 rounded-full">
+                    <span class="relative flex h-2.5 w-2.5">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-gold"></span>
+                    </span>
+                    <span class="text-[11px] font-bold uppercase tracking-[0.2em] text-gold">Resultados Reales en su Negocio</span>
+                </div>
+                <h1 class="text-5xl md:text-8xl font-bold leading-[0.95] tracking-tighter max-w-4xl">
+                    El servicio mediocre es <span class="text-gold italic underline decoration-gold/30 underline-offset-8">dinero que pierde hoy.</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 font-light max-w-2xl leading-relaxed mx-auto lg:mx-0">
+                    No vendemos teoría. Resolvemos los cuellos de botella operativos que frenan su rentabilidad, dañan su reputación y agotan a sus equipos.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-8 justify-center lg:justify-start pt-6 mb-12">
+                    <a href="#contacto" class="hero-btn bg-gold text-white px-12 py-6 font-bold text-xs uppercase tracking-[0.3em] shadow-xl">Agendar consulta</a>
+                    <a href="#ingenieria" class="hero-btn border border-white/20 text-white px-12 py-6 font-bold text-xs uppercase tracking-[0.3em] backdrop-blur-sm">Ver Casos de Resolución</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Ingeniería de Soluciones -->
+    <section id="ingenieria" class="section-padding bg-beige scroll-mt">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20 reveal">
+                <span class="text-gold font-bold uppercase tracking-[0.4em] text-[11px]">Ingeniería de Soluciones</span>
+                <h2 class="text-4xl md:text-6xl font-bold text-dark-green serif italic mt-4">¿Qué desafío bloquea su crecimiento?</h2>
+                <p class="text-gray-500 mt-6 max-w-2xl mx-auto">Identificamos el síntoma, trazamos la arquitectura del cambio y ejecutamos la solución definitiva.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="premium-card p-10 md:p-14 space-y-6 reveal">
+                    <div class="solution-tag">Desafío: Rotación & Inconsistencia</div>
+                    <h3 class="text-2xl font-bold text-dark-green italic serif leading-tight">"Mi personal cambia constantemente y el servicio es una montaña rusa de errores."</h3>
+                    <div class="h-px bg-gray-100 w-full"></div>
+                    <div class="space-y-4">
+                        <p class="text-xs font-bold text-gold uppercase tracking-widest">Resolución Salvador:</p>
+                        <p class="text-gray-600">Sistematizamos el éxito. Creamos inducciones críticas para que cualquier colaborador rinda al 90% en menos de 48 horas.</p>
+                    </div>
+                </div>
+                <div class="premium-card p-10 md:p-14 space-y-6 reveal" style="transition-delay: 0.1s">
+                    <div class="solution-tag">Desafío: Rentabilidad Estancada</div>
+                    <h3 class="text-2xl font-bold text-dark-green italic serif leading-tight">"Vendemos bien, pero el ticket promedio es bajo y el equipo no ofrece más."</h3>
+                    <div class="h-px bg-gray-100 w-full"></div>
+                    <div class="space-y-4">
+                        <p class="text-xs font-bold text-gold uppercase tracking-widest">Resolución Salvador:</p>
+                        <p class="text-gray-600">Activamos protocolos de **Venta Sugestiva**. Elevamos el consumo orgánico entre un 15% y 25% mediante lenguaje persuasivo.</p>
+                    </div>
+                </div>
+                <div class="premium-card p-10 md:p-14 space-y-6 reveal" style="transition-delay: 0.2s">
+                    <div class="solution-tag">Desafío: Crisis de Reputación</div>
+                    <h3 class="text-2xl font-bold text-dark-green italic serif leading-tight">"Una mala reseña en Google me está costando reservas y dinero real."</h3>
+                    <div class="h-px bg-gray-100 w-full"></div>
+                    <div class="space-y-4">
+                        <p class="text-xs font-bold text-gold uppercase tracking-widest">Resolución Salvador:</p>
+                        <p class="text-gray-600">Blindamos el negocio con protocolos de recuperación. Convertimos clientes molestos en promotores de la marca en segundos.</p>
+                    </div>
+                </div>
+                <div class="premium-card p-10 md:p-14 space-y-6 reveal" style="transition-delay: 0.3s">
+                    <div class="solution-tag">Desafío: Micromanagement del Dueño</div>
+                    <h3 class="text-2xl font-bold text-dark-green italic serif leading-tight">"Si no estoy físicamente en el local, el estándar de servicio se desmorona."</h3>
+                    <div class="h-px bg-gray-100 w-full"></div>
+                    <div class="space-y-4">
+                        <p class="text-xs font-bold text-gold uppercase tracking-widest">Resolución Salvador:</p>
+                        <p class="text-gray-600">Arquitectura de Liderazgo Invisible. Creamos auditorías automáticas que garantizan el lujo sin depender de su presencia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metodología -->
+    <section id="proceso" class="section-padding bg-white scroll-mt">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20 reveal">
+                <span class="text-gold font-bold uppercase tracking-[0.4em] text-[11px]">Metodología de Alto Rendimiento</span>
+                <h2 class="text-4xl md:text-6xl font-bold text-dark-green serif italic mt-4">Invertir en Soluciones, no en Horas</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-12 text-center">
+                <div class="space-y-6 reveal">
+                    <div class="w-20 h-20 bg-beige flex items-center justify-center mx-auto text-3xl font-serif text-gold border border-gold/20">01</div>
+                    <h3 class="text-2xl font-bold text-dark-green uppercase text-sm tracking-widest">Auditoría Ciega</h3>
+                    <p class="text-gray-500">Detectamos la brecha real entre la visión del dueño y la experiencia real del cliente.</p>
+                </div>
+                <div class="space-y-6 reveal" style="transition-delay: 0.1s">
+                    <div class="w-20 h-20 bg-beige flex items-center justify-center mx-auto text-3xl font-serif text-gold border border-gold/20">02</div>
+                    <h3 class="text-2xl font-bold text-dark-green uppercase text-sm tracking-widest">Cirugía Operativa</h3>
+                    <p class="text-gray-500">Atacamos los vicios de servicio con entrenamiento técnico directo en el puesto de trabajo.</p>
+                </div>
+                <div class="space-y-6 reveal" style="transition-delay: 0.2s">
+                    <div class="w-20 h-20 bg-beige flex items-center justify-center mx-auto text-3xl font-serif text-gold border border-gold/20">03</div>
+                    <h3 class="text-2xl font-bold text-dark-green uppercase text-sm tracking-widest">Escalabilidad</h3>
+                    <p class="text-gray-500">Sistematizamos la calidad para que sea una constante, eliminando la dependencia de la suerte.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto e Integración WhatsApp -->
+    <section id="contacto" class="section-padding px-6 bg-white scroll-mt">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20">
+            <div class="lg:w-1/2 space-y-12 reveal">
+                <h2 class="text-5xl md:text-7xl font-bold text-dark-green serif italic leading-none">Iniciemos su <br>transformación.</h2>
+                <p class="text-2xl text-gray-500 leading-relaxed max-w-lg">Solicite una consulta estratégica. Identificaremos sus fugas de rentabilidad y trazaremos una hoja de ruta.</p>
+                
+                <div class="pt-10 space-y-8">
+                    <div class="flex items-center gap-6">
+                        <div class="w-14 h-14 bg-beige flex items-center justify-center text-gold shadow-sm border border-gold/10">💬</div>
+                        <div>
+                            <p class="text-[10px] uppercase tracking-widest font-bold text-gray-400">Canal de Consultoría</p>
+                            <p class="text-2xl font-bold text-dark-green">+54 9 280 468 4756</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:w-1/2 reveal">
+                <form id="contactForm" class="space-y-12 bg-beige p-10 md:p-16 shadow-2xl border-t-8 border-gold">
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <div class="space-y-1">
+                            <label class="text-[9px] uppercase font-bold tracking-widest text-gray-400">Nombre</label>
+                            <input type="text" id="nombre" required placeholder="Ej: Juan" class="input-premium">
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-[9px] uppercase font-bold tracking-widest text-gray-400">Apellido</label>
+                            <input type="text" id="apellido" required placeholder="Ej: Pérez" class="input-premium">
+                        </div>
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-[9px] uppercase font-bold tracking-widest text-gray-400">Email de Negocios</label>
+                        <input type="email" id="email" required placeholder="email@negocio.com" class="input-premium">
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-[9px] uppercase font-bold tracking-widest text-gray-400">¿Qué desea resolver?</label>
+                        <select id="motivo" required class="input-premium appearance-none bg-transparent">
+                            <option value="" disabled selected>Seleccione el síntoma principal...</option>
+                            <option value="Escalar Rentabilidad y Ticket Promedio">Escalar Rentabilidad y Ticket Promedio</option>
+                            <option value="Eliminar Quejas e Inconsistencia en Servicio">Eliminar Quejas e Inconsistencia en Servicio</option>
+                            <option value="Sistematizar Procesos y Manuales">Sistematizar Procesos y Manuales</option>
+                            <option value="Capacitación de Equipos de Alto Rendimiento">Capacitación de Equipos de Alto Rendimiento</option>
+                            <option value="Consultoría / Auditoría Ciega">Consultoría / Auditoría Ciega</option>
+                            <option value="Otro problema">Otro problema</option>
+                        </select>
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-[9px] uppercase font-bold tracking-widest text-gray-400">Describa su situación (opcional)</label>
+                        <textarea id="mensaje" placeholder="Ej: Mi equipo de sala no ofrece adicionales..." rows="3" class="input-premium"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-dark-green text-white font-bold py-7 uppercase tracking-[0.4em] text-[11px] hover:bg-gold transition-all duration-700 shadow-xl group">
+                        Enviar consulta por WhatsApp 💬
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-green text-white py-20 px-8">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12 border-b border-white/5 pb-20 text-center md:text-left">
+            <div class="flex flex-col">
+                <span class="text-4xl font-bold tracking-tighter uppercase serif text-gold leading-none">Salvador</span>
+                <span class="text-[10px] uppercase tracking-[0.6em] text-gold mt-3 italic font-bold">High-Impact Hospitality Strategy</span>
+            </div>
+            <p class="text-gray-500 text-[10px] uppercase tracking-widest">© 2024 Daniela Salvador Strategy. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Botón Flotante Moderno - No Logo -->
+    <a href="https://wa.me/5492804684756?text=Hola%20Daniela%20Salvador,%20quisiera%20agendar%20una%20consulta%20estratégica%20para%20mi%20negocio." target="_blank" class="whatsapp-modern pulse group">
+        <span class="font-bold uppercase tracking-widest">Agendar Consulta 💬</span>
+    </a>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 85,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nombre = document.getElementById('nombre').value;
+            const apellido = document.getElementById('apellido').value;
+            const email = document.getElementById('email').value;
+            const motivo = document.getElementById('motivo').value;
+            const mensajeAdicional = document.getElementById('mensaje').value.trim();
+            
+            const numero = "5492804684756";
+            const situacionTexto = mensajeAdicional !== '' ? `%0AMi situación es: ${mensajeAdicional}` : '';
+            
+            const textoWhatsApp = `Hola Daniela Salvador, mi nombre es ${nombre} ${apellido}.%0A%0A` +
+                                 `Mi motivo de consulta es: ${motivo}.${situacionTexto}%0A%0A` +
+                                 `Mi mail es: ${email}.`;
+            
+            window.open(`https://wa.me/${numero}?text=${textoWhatsApp}`, '_blank');
+        });
+    </script>
+</body>
+</html>
